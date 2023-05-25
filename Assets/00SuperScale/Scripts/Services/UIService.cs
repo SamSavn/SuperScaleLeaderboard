@@ -7,6 +7,9 @@ using SuperScale.Data;
 
 namespace SuperScale.Services
 {
+    /// <summary>
+    /// Responsable for managing UI events
+    /// </summary>
     public class UIService : Service
     {
         public readonly UIInfo UIInfo;

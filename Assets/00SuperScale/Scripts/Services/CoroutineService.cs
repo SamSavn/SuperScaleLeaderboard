@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace SuperScale.Services
 {
+    /// <summary>
+    /// Responsable for handling coroutine in non-monobehavior scripts
+    /// </summary>
     public class CoroutineService : Service
     {
         private readonly MonoBehaviour _runner;

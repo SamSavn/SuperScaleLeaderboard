@@ -2,6 +2,10 @@ using SuperScale.Data;
 
 namespace SuperScale.Services
 {
+    /// <summary>
+    /// Responsable for returning infos.
+    /// Infos are used to set game parameters through the editor.
+    /// </summary>
     public class InfoService : Service
     {
         public readonly GameInfo GameInfo;

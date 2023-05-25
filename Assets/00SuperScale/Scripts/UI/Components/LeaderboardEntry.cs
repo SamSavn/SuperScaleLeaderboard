@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using SuperScale.Data;
@@ -97,13 +95,8 @@ namespace SuperScale.UI.Components
                 _background.AddToClassList(PlayerBackgroundClass);
             }
 
-            SetBadge();
-            SetUserImage();
-
-            _flag.SetBackround($"{_flagPrefix}{_entryData.player.countryCode.ToLower()}");
-            _userName.text = _entryData.player.username;
-            _userScore.text = _entryData.points.ToString().InsertSpaces(3);
-            _vipImage.ToggleVisibility(_entryData.player.isVip);
+            SetImages();
+            SetLabels();
         }
 
         private void SetBadge()
@@ -127,17 +120,19 @@ namespace SuperScale.UI.Components
             _userImage.SetBackround($"{_characterPrefix}{_entryData.player.characterIndex}");
         }
 
-        //private IEnumerator FadeIn()
-        //{
-        //    GameInfo gameInfo = ServiceRegistry.Get<InfoService>().GameInfo;
-        //    yield return new WaitForSeconds(gameInfo.EntriesFadeDelay);
-        //    //_mainContainer.style.opacity = 1f;
-        //    _mainContainer.Fade(0, 1f, Mathf.FloorToInt(gameInfo.EntriesFadeDuration * 1000));
-        //}
+        private void SetImages()
+        {
+            SetBadge();
+            SetUserImage();
 
-        //public override void OnShow()
-        //{
-        //    ServiceRegistry.Get<CoroutineService>().StartCoroutine(FadeIn());
-        //}
+            _flag.SetBackround($"{_flagPrefix}{_entryData.player.countryCode.ToLower()}");
+            _vipImage.ToggleVisibility(_entryData.player.isVip);
+        }
+
+        private void SetLabels()
+        {
+            _userName.text = _entryData.player.username;
+            _userScore.text = _entryData.points.ToString().InsertSpaces(3);
+        }
     }
 }

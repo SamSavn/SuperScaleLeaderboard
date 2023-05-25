@@ -9,6 +9,9 @@ using System;
 
 namespace SuperScale.UI
 {
+    /// <summary>
+    /// Responsable for changing views
+    /// </summary>
     public static class Navigator
     {
         private static UIService _uiService;
@@ -73,6 +76,11 @@ namespace SuperScale.UI
             }
         }
 
+
+        /// <summary>
+        /// Navigates to destination
+        /// </summary>
+        /// <param name="destination">The destination view</param>
         public static void Navigate(IView destination)
         {
             if (!Initialized)
@@ -134,7 +142,10 @@ namespace SuperScale.UI
 
         public static void TryShowLoader()
         {
-            _showLoaderCoroutine = _coroutineService.StartCoroutine(ShowLoader());
+            if (_showLoaderCoroutine == null)
+            {
+                _showLoaderCoroutine = _coroutineService.StartCoroutine(ShowLoader()); 
+            }
         }
 
         private static IEnumerator ShowLoader()

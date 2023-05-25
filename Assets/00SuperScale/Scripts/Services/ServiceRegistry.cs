@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace SuperScale.Services
 {
+    /// <summary>
+    /// Responsable for holding and retrieving Services
+    /// </summary>
     public static class ServiceRegistry
     {
         private static Dictionary<Type, object> _services = new Dictionary<Type, object>();

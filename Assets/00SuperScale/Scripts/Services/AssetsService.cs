@@ -14,6 +14,9 @@ using UnityEditor.AddressableAssets;
 
 namespace SuperScale.Services
 {
+    /// <summary>
+    /// Responsable for loading and saving assets
+    /// </summary>
     public class AssetsService : Service
     {
         private static object loadLock = new object();

@@ -4,6 +4,10 @@ using SuperScale.Data;
 
 namespace SuperScale.Services
 {
+    /// <summary>
+    /// Responsable for caching the assets once their loaded.
+    /// The assets are stored in different caches by type.
+    /// </summary>
     public class CacheService : Service
     {
         private readonly Dictionary<Type, object> _caches;

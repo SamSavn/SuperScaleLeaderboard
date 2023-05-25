@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace SuperScale.Utils
 {
+    /// <summary>
+    /// Can be used to execute methods when there is a change of state
+    /// </summary>
     public class ActionNotifier
     {
         private readonly List<Action> _subcribers;

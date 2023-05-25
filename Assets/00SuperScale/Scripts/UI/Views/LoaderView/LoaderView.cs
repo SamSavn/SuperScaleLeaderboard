@@ -1,6 +1,5 @@
 using UnityEngine.UIElements;
 using SuperScale.UI.Transitions;
-using SuperScale.Services;
 
 namespace SuperScale.UI.Views
 {

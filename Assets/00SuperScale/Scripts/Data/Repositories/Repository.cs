@@ -5,11 +5,20 @@ using SuperScale.Utils;
 
 namespace SuperScale.Data
 {
+    /// <summary>
+    /// Repositories are responsable for loading, parsing and holding data
+    /// </summary>
+    /// <typeparam name="TData">Type of data the repository will hold</typeparam>
     public abstract class Repository<TData> : Repository<TData, TData>
     {
 
     }
 
+    /// <summary>
+    /// Repositories are responsable for loading, parsing and holding data
+    /// </summary>
+    /// <typeparam name="TData">Type of data the repository will hold</typeparam>
+    /// <typeparam name="TAsset">Type of asset to load</typeparam>
     public abstract class Repository<TData, TAsset>
     {
         private ActionNotifier _notifier = new ActionNotifier();

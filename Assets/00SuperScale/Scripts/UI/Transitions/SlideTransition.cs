@@ -1,8 +1,6 @@
 ﻿using DG.Tweening;
-using System;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.UIElements.Experimental;
 
 namespace SuperScale.UI.Transitions
 {
