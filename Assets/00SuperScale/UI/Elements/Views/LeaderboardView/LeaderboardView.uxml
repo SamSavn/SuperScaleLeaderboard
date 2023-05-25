@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00SuperScale/UI/Elements/Views/LeaderboardView/LeaderboardViewStyle.uss?fileID=7433441132597879392&amp;guid=131ef21de4bfd5946823a80dcd99025f&amp;type=3#LeaderboardViewStyle" />
+    <SuperScale.UI.Components.Layout.Container grow="1">
+        <SuperScale.UI.Components.Layout.Container grow="1" name="background" class="overlay" style="transition-property: opacity; transition-duration: 0.25s;" />
+        <SuperScale.UI.Components.Layout.Column grow="1" main-axis-alignment="Center" cross-axis-alignment="Center" picking-mode="Ignore">
+            <SuperScale.UI.Components.Layout.Container grow="0" name="leaderboard" picking-mode="Ignore" class="leaderboard">
+                <SuperScale.UI.Components.Layout.Stack picking-mode="Ignore" class="glow-container">
+                    <SuperScale.UI.Components.Image name="glow" class="glow" />
+                </SuperScale.UI.Components.Layout.Stack>
+                <SuperScale.UI.Components.Layout.Stack picking-mode="Ignore" class="frame-highlight-container" style="top: 15px; align-items: center;">
+                    <SuperScale.UI.Components.Image name="highlight" class="frame-highlight" />
+                </SuperScale.UI.Components.Layout.Stack>
+                <SuperScale.UI.Components.Layout.Stack picking-mode="Ignore">
+                    <SuperScale.UI.Components.Layout.Row main-axis-alignment="FlexEnd" grow="0" picking-mode="Ignore">
+                        <SuperScale.UI.Components.Image name="exit-button" class="exit-button">
+                            <SuperScale.UI.Components.Layout.Row grow="1" cross-axis-alignment="Center" main-axis-alignment="Center" picking-mode="Ignore">
+                                <SuperScale.UI.Components.Image grow="0" picking-mode="Ignore" />
+                            </SuperScale.UI.Components.Layout.Row>
+                        </SuperScale.UI.Components.Image>
+                    </SuperScale.UI.Components.Layout.Row>
+                </SuperScale.UI.Components.Layout.Stack>
+                <SuperScale.UI.Components.Layout.Column grow="1" picking-mode="Ignore">
+                    <ui:Label text="Leaderboard" picking-mode="Ignore" class="leaderboard-title" />
+                    <SuperScale.UI.Components.Layout.Column name="entries-container" grow="1" picking-mode="Ignore" class="entries-container" />
+                </SuperScale.UI.Components.Layout.Column>
+            </SuperScale.UI.Components.Layout.Container>
+        </SuperScale.UI.Components.Layout.Column>
+    </SuperScale.UI.Components.Layout.Container>
+</ui:UXML>

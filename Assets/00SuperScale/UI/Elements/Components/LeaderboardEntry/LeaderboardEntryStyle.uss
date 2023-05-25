@@ -1,0 +1,84 @@
+* {
+    --default-background: url('project://database/Assets/00SuperScale/GUI/UI/ListItem.png?fileID=21300000&guid=bb4433806388eaa49ac6e6e0dad0d44a&type=3#ListItem');
+    --player-background: url('project://database/Assets/00SuperScale/GUI/UI/ListItemPlayer.png?fileID=2800000&guid=243323f2c7b25ee4b8105f9bb9befeb7&type=3#ListItemPlayer');
+    --default-badge-img: url('project://database/Assets/00SuperScale/GUI/UI/BadgeGold.png?fileID=2800000&guid=b85b0c1f1ebad524f822e5cb3d521abb&type=3#BadgeGold');
+    --default-user-img: url('project://database/Assets/00SuperScale/GUI/Characters/Char01.png?fileID=2800000&guid=bc0aa363d8666844295003742fc915e3&type=3#Char01');
+    --default-flag-img: url('project://database/Assets/00SuperScale/GUI/Flags/US.png?fileID=2800000&guid=aecf410ab96995045a6541533db598e5&type=3#US');
+    --user-image-background: url('project://database/Assets/00SuperScale/GUI/UI/UserPicture.png?fileID=2800000&guid=06b34d6c61457de40810890f8fee63e1&type=3#UserPicture');
+    --vip-img: url('project://database/Assets/00SuperScale/GUI/UI/VIP.png?fileID=2800000&guid=7cfb8ce0f5d610d4eb39be4f364a38d1&type=3#VIP');
+}
+
+.entry-background {
+    background-image: var(--default-background);
+    -unity-slice-left: 50;
+    -unity-slice-top: 45;
+    -unity-slice-right: 50;
+    -unity-slice-bottom: 45;
+}
+
+.entry-bedge {
+    background-image: var(--default-badge-img);
+}
+
+.entry-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-height: 75px;
+}
+
+.entry-position {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: var(--text-font-bold);
+    top: 4px;
+}
+
+.user-image-bg {
+    background-image: var(--user-image-background);
+}
+
+.user-image {
+    background-image: var(--default-user-img);
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.entry-image {
+    -unity-background-scale-mode: scale-to-fit;
+    margin-right: 8px;
+    width: 45px;
+}
+
+.user-flag {
+    background-image: var(--default-flag-img);
+}
+
+.big-label {
+    font-size: 40px;
+    padding-bottom: 5px;
+}
+
+.user-name {
+    -unity-text-align: middle-left;
+    color: rgb(152, 167, 180);
+    flex-grow: 1;
+}
+
+.score-label {
+    color: rgb(208, 232, 248);
+    margin-right: 10px;
+    -unity-font-definition: var(--text-font-bold);
+    -unity-text-align: middle-left;
+}
+
+.vip-image {
+    background-image: var(--vip-img);
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.player-entry-background {
+    background-image: var(--player-background);
+}

@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00SuperScale/UI/Elements/Components/LeaderboardEntry/LeaderboardEntryStyle.uss?fileID=7433441132597879392&amp;guid=6203db25821acd040ac7b2453fdfc385&amp;type=3#LeaderboardEntryStyle" />
+    <SuperScale.UI.Components.Layout.Container name="main-container" class="entry-container" style="transition-property: opacity; transition-duration: 0.3s; transition-timing-function: ease-out;">
+        <SuperScale.UI.Components.Layout.Stack name="entry-background" class="entry-background" />
+        <SuperScale.UI.Components.Layout.Row grow="1">
+            <SuperScale.UI.Components.Layout.Row grow="1" style="padding-bottom: 5px;">
+                <SuperScale.UI.Components.Image name="badge" class="entry-image entry-bedge">
+                    <ui:Label text="1" name="user-position" class="stack entry-position" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                </SuperScale.UI.Components.Image>
+                <SuperScale.UI.Components.Image name="user-image-bg" class="entry-image user-image-bg">
+                    <SuperScale.UI.Components.Image grow="1" name="user-image" class="user-image" />
+                </SuperScale.UI.Components.Image>
+                <SuperScale.UI.Components.Image name="flag" class="user-flag entry-image" />
+                <ui:Label text="John Smith" name="user-name" class="user-name big-label" style="height: 100%;" />
+            </SuperScale.UI.Components.Layout.Row>
+            <SuperScale.UI.Components.Layout.Row>
+                <ui:Label text="99 999" display-tooltip-when-elided="true" name="user-score" class="score-label big-label" />
+                <SuperScale.UI.Components.Layout.Container>
+                    <SuperScale.UI.Components.Image name="vip-image" grow="1" class="vip-image entry-image" style="margin-right: 0;" />
+                </SuperScale.UI.Components.Layout.Container>
+            </SuperScale.UI.Components.Layout.Row>
+        </SuperScale.UI.Components.Layout.Row>
+    </SuperScale.UI.Components.Layout.Container>
+</ui:UXML>

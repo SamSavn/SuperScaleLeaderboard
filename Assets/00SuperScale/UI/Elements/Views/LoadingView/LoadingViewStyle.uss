@@ -1,0 +1,15 @@
+VisualElement {
+}
+
+.background {
+    background-image: url('project://database/Assets/00SuperScale/GUI/UI/Background.png?fileID=2800000&guid=6544dd7062df13245923296a7867b65c&type=3#Background');
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.button-container {
+}
+
+.start-button {
+    width: 500px;
+    height: 150px;
+}

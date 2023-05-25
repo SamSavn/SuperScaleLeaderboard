@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00SuperScale/UI/Elements/Views/LoadingView/LoadingViewStyle.uss?fileID=7433441132597879392&amp;guid=6bf20a58c656ec34980f411ac1a2e338&amp;type=3#LoadingViewStyle" />
+    <SuperScale.UI.Components.Layout.Container grow="1" name="container">
+        <SuperScale.UI.Components.Layout.Stack class="background" />
+        <SuperScale.UI.Components.Layout.Column grow="1" main-axis-alignment="FlexEnd" cross-axis-alignment="Center" class="button-container" style="padding-left: 30px; padding-right: 30px; padding-top: 30px; padding-bottom: 30px;">
+            <SuperScale.UI.Components.Layout.Container name="start-button" class="start-button" />
+        </SuperScale.UI.Components.Layout.Column>
+    </SuperScale.UI.Components.Layout.Container>
+</ui:UXML>

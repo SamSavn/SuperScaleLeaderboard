@@ -1,0 +1,79 @@
+* {
+    --window-background: url('project://database/Assets/00SuperScale/GUI/UI/WindowBackground.png?fileID=21300000&guid=dd36e29baf80246bbaa820cefcd9b9d2&type=3#WindowBackground');
+    --button-frame: url('project://database/Assets/00SuperScale/GUI/UI/ButtonFrame.png?fileID=2800000&guid=f4808217f4f42db4c93beda5fd126a08&type=3#ButtonFrame');
+    --icon-x: url('project://database/Assets/00SuperScale/GUI/UI/IconX.png?fileID=2800000&guid=db9b74a0e3b0bd145b61a48716e08dba&type=3#IconX');
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.leaderboard {
+    width: 1755px;
+    max-height: 95%;
+    padding: 50px;
+    padding-bottom: 65px;
+    background-image: var(--window-background);
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-slice-left: 220;
+    -unity-slice-top: 95;
+    -unity-slice-right: 220;
+    -unity-slice-bottom: 135;
+}
+
+.leaderboard-title {
+    -unity-text-align: middle-center;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    -unity-font-definition: var(--text-font-bold);
+}
+
+.entries-container {
+    padding-top: 20px;
+}
+
+.exit-button {
+    width: 100px;
+    height: 100px;
+    background-image: var(--button-frame);
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.exit-button .image {
+    width: 40%;
+    height: 40%;
+    background-image: var(--icon-x);
+    -unity-background-image-tint-color: rgb(85, 204, 255);
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.leaderboardentry {
+    margin-bottom: -10px;
+}
+
+.glow {
+    background-image: url('project://database/Assets/00SuperScale/GUI/UI/Glow.png?fileID=2800000&guid=7581f014c663de6428a1816fcf0f26d7&type=3#Glow');
+    -unity-background-image-tint-color: rgba(0, 89, 184, 0.8);
+    width: 880px;
+    height: 175px;
+}
+
+.glow-container {
+    align-items: center;
+    top: -30px;
+}
+
+.frame-highlight {
+    background-image: url('project://database/Assets/00SuperScale/GUI/UI/FrameHighlight.png?fileID=2800000&guid=5c89b59bbf3c2b84c9efd6151c3e3079&type=3#FrameHighlight');
+    height: 4px;
+    width: 869px;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 0.69);
+}
+
+.frame-highlight-container {
+}

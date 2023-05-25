@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: GUI
+  m_EditorClassIdentifier: 
+  m_GroupName: GUI
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6e1330c5386870b45b8ce02251d49ec7
+  m_SerializeEntries:
+  - m_GUID: bc0aa363d8666844295003742fc915e3
+    m_Address: char-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: f2420bcc317702142a60c0ab5181a2d5
+    m_Address: char-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: c7a01fedb3b9d8e4ca19c13c94afeef5
+    m_Address: char-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: 4f1f0dc4b259d064bbc3ba6998efd501
+    m_Address: char-4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: fe281e1479523884498f5b83cb6af5d1
+    m_Address: char-5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: b85b0c1f1ebad524f822e5cb3d521abb
+    m_Address: badge-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: a771d8aa39a3b9a43aedcdde55c76c7b
+    m_Address: badge-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: d7dd5634ccad9c84a8503037ba7410e9
+    m_Address: badge-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: aecf410ab96995045a6541533db598e5
+    m_Address: flag-us
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: 0d5d58e7fde130f48b3a00298dd1bc4c
+    m_Address: flag-br
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: 2b3757efbb90dab42bc7c3491607040b
+    m_Address: flag-cn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: c27b67cd470c2f947aae7781f5af145d
+    m_Address: flag-de
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: 5dc129aa63bc1454693cb4ff756cc9f5
+    m_Address: flag-es
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: bf58f9541351dee4ea2b60b9c4d08457
+    m_Address: flag-fr
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  - m_GUID: 51b38fffb02f4e94ebfaaa1b2fb539a6
+    m_Address: flag-it
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Default
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 80878b77b19794e4c8073ae3c2c53d99, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c76e1774ca64e9846a55b5bc71b6e4dc, type: 2}
+    - {fileID: 11400000, guid: 406f0c765784d2f42a62279e4f4ca7dd, type: 2}

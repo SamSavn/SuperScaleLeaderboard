@@ -1,0 +1,32 @@
+:root {
+    --text-font: url('project://database/Assets/00SuperScale/GUI/Fonts/NEXON%20Football%20Gothic%20L%20SDF%201.asset?fileID=11400000&guid=3da7f56d7771da74db9ceebcb8188385&type=2#NEXON Football Gothic L SDF 1');
+    --text-font-bold: url('project://database/Assets/00SuperScale/GUI/Fonts/NEXON%20Football%20Gothic%20B%20SDF%201.asset?fileID=11400000&guid=484d94a200dcfa943a61a3f2c2605ddb&type=2#NEXON Football Gothic B SDF 1');
+}
+
+.view {
+    flex-grow: 1;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.stack {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.unity-label {
+    -unity-font-definition: var(--text-font);
+}
+
+.invisible {
+    opacity: 0;
+}
