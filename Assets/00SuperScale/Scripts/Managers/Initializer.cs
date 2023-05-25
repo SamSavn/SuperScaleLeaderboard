@@ -27,7 +27,7 @@ public class Initializer : MonoBehaviour
         ServiceRegistry.Register(new CoroutineService(this));
         ServiceRegistry.Register(new AssetsService());
         ServiceRegistry.Register(new CacheService());
-        ServiceRegistry.Register(new UIService());
+        ServiceRegistry.Register(new UIService(_gameInfo.UIInfo));
     }
 
     private void OnApplicationQuit()

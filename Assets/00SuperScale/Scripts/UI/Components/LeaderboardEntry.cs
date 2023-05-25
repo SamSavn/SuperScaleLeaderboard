@@ -38,7 +38,13 @@ namespace SuperScale.UI.Components
 
         public LeaderboardEntry()
         {
-            AddToClassList(ID);            
+            AddToClassList(ID);
+
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+
             GetInfo();
         }
 
@@ -53,7 +59,7 @@ namespace SuperScale.UI.Components
 
         public override ITransition GetEnterTransition()
         {
-            TransitionsInfo info = ServiceRegistry.Get<InfoService>().TransitionsInfo;
+            UIInfo info = ServiceRegistry.Get<InfoService>().UIInfo;
             return new OpacityTransition(_mainContainer, 0, 1f, info.EntriesFadeDuration);
         }
 

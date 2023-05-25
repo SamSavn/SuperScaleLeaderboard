@@ -3,11 +3,14 @@ using System.Linq;
 using System.Collections.Generic;
 using SuperScale.UI.Views;
 using SuperScale.Utils;
+using SuperScale.Data;
 
 namespace SuperScale.Services
 {
     public class UIService : Service
     {
+        public readonly UIInfo UIInfo;
+
         private readonly ActionNotifier _viewExitNotifier;
         private readonly ActionNotifier _viewEnterNotifier;
 
@@ -16,8 +19,10 @@ namespace SuperScale.Services
 
         public bool CanTranslate => _transitioningViews.Count == 0 && _preparingViews.Count == 0;
 
-        public UIService()
+        public UIService(UIInfo info)
         {
+            UIInfo = info;
+
             _viewExitNotifier = new ActionNotifier();
             _viewEnterNotifier = new ActionNotifier();
 

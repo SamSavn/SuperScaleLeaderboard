@@ -6,10 +6,10 @@ namespace SuperScale.Services
     {
         public readonly GameInfo GameInfo;
 
+        public UIInfo UIInfo => GameInfo.UIInfo;
         public PlayerPrefsInfo PlayerPrefsInfo => GameInfo.PlayerPrefsInfo;
         public LeaderboardInfo LeaderboardInfo => GameInfo.LeaderboardInfo;
         public AddressesInfo AddressesInfo => GameInfo.AddressesInfo;
-        public TransitionsInfo TransitionsInfo => GameInfo.TransitionsInfo;
 
         public InfoService(GameInfo gameInfo)
         {

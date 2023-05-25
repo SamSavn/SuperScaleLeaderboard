@@ -1,9 +1,4 @@
 using UnityEngine.UIElements;
-using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using System.Threading.Tasks;
-using System;
 
 namespace SuperScale.UI.Views
 {
@@ -12,6 +7,16 @@ namespace SuperScale.UI.Views
     {
         public override string ID { get; }
         protected TPresenter Presenter;
+
+        public View(VisualTreeAsset asset) : base(asset)
+        {
+
+        }
+
+        public View()
+        {
+
+        }
 
         protected override void OnEnter()
         {

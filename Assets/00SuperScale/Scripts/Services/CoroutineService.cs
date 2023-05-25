@@ -17,9 +17,9 @@ namespace SuperScale.Services
             _runner = runner;
         }
 
-        public void StartCoroutine(IEnumerator routine)
+        public Coroutine StartCoroutine(IEnumerator routine)
         {
-            _runner.StartCoroutine(routine);
+            return _runner.StartCoroutine(routine);
         }
 
         public void StopCoroutine(IEnumerator routine)
@@ -27,6 +27,15 @@ namespace SuperScale.Services
             if(routine != null)
             {
                 _runner.StopCoroutine(routine);
+            }
+        }
+
+        public void StopCoroutine(Coroutine routine)
+        {
+            if (routine != null)
+            {
+                _runner.StopCoroutine(routine);
+                routine = null;
             }
         }
 

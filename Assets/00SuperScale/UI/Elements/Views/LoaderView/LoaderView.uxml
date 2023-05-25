@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/00SuperScale/UI/Elements/Views/LoaderView/LoaderViewStyle.uss?fileID=7433441132597879392&amp;guid=449a57d426b83cc43a5d40738a9d0a71&amp;type=3#LoaderViewStyle" />
+    <ui:VisualElement name="container" style="flex-grow: 1;">
+        <SuperScale.UI.Components.Layout.Stack class="loader-background" />
+        <SuperScale.UI.Components.Layout.Column grow="1" main-axis-alignment="Center">
+            <ui:Label text="Loading..." class="loader-label" />
+        </SuperScale.UI.Components.Layout.Column>
+    </ui:VisualElement>
+</ui:UXML>

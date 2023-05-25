@@ -1,0 +1,9 @@
+.loader-background {
+    background-color: rgba(0, 0, 0, 0.82);
+}
+
+.loader-label {
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    font-size: 72px;
+}

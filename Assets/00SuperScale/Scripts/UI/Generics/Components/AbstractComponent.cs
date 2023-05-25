@@ -45,6 +45,11 @@ namespace SuperScale.UI.Components
         private readonly ComponentRepository _repo;
         protected VisualTreeAsset _asset;
 
+        public AbstractComponent(VisualTreeAsset asset) : this()
+        {
+            _asset = asset;
+        }
+
         public AbstractComponent()
         {
             if (!Application.isPlaying)

@@ -14,6 +14,11 @@ namespace SuperScale.UI.Views
 
         private readonly ActionNotifier _readyNotifier;
 
+        public AbstractView(VisualTreeAsset asset) : base(asset)
+        {
+            AddToClassList("view");
+        }
+
         public AbstractView()
         {
             AddToClassList("view");

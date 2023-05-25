@@ -436,6 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameInfo: {fileID: 11400000, guid: 4a67cd4ed8ff94349a679b762bab8cd6, type: 2}
   _rootUiDocument: {fileID: 695935003}
+  _loaderView: {fileID: 9197481963319205126, guid: da58577518145e1499a5a0e2d57ee66c, type: 3}
 --- !u!4 &1039281848
 Transform:
   m_ObjectHideFlags: 0

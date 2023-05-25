@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using SuperScale.UI.Views;
-using SuperScale.Utils;
 using SuperScale.Services;
+using System.Collections;
+using System;
 
 namespace SuperScale.UI
 {
     public static class Navigator
     {
         private static UIService _uiService;
+        private static CoroutineService _coroutineService;
+
         private static UIDocument _uiDocument;
         private static VisualElement _root;
+        private static LoaderView _loader;
+
+        private static Coroutine _showLoaderCoroutine;
+        private static WaitForSeconds _waitForShowLoader;
+        private static WaitForSeconds _waitForHideLoader;
 
         private static List<IView> _activeViews = new List<IView>();
 
@@ -35,6 +43,11 @@ namespace SuperScale.UI
             }
 
             _uiService = ServiceRegistry.Get<UIService>();
+            _coroutineService = ServiceRegistry.Get<CoroutineService>();
+
+            _waitForShowLoader = new WaitForSeconds(_uiService.UIInfo.TimeToShowLoader);
+            _waitForHideLoader = new WaitForSeconds(_uiService.UIInfo.MinTimeToShowLoader);
+
             _uiDocument = uIDocument;
             _root = _uiDocument?.rootVisualElement;
         }
@@ -85,12 +98,17 @@ namespace SuperScale.UI
 
             if (!_currentView.IsReady())
             {
+                if (!IsViewActive(_currentView))
+                {
+                    TryShowLoader(); 
+                }
+
                 _uiService.PrepareView(_currentView, OnCurrentViewReady);
             }
             else
             {
                 OnCurrentViewReady();
-            }
+            }            
         }
 
         private static void OnCurrentViewExit()
@@ -103,12 +121,47 @@ namespace SuperScale.UI
 
         private static void OnCurrentViewReady()
         {
-            if (!IsViewActive(_currentView))
+            TryHideLoader(() => 
             {
-                AddView(_currentView);
-            }
+                if (!IsViewActive(_currentView))
+                {
+                    AddView(_currentView);
+                }
 
-            _uiService.TransitionEnter(_currentView);
+                _uiService.TransitionEnter(_currentView);
+            });
+        }
+
+        public static void TryShowLoader()
+        {
+            _showLoaderCoroutine = _coroutineService.StartCoroutine(ShowLoader());
+        }
+
+        private static IEnumerator ShowLoader()
+        {
+            yield return _waitForShowLoader;
+            _loader = new LoaderView(_uiService.UIInfo.LoaderAsset);
+            _root.Add(_loader);
+        }
+
+        private static void TryHideLoader(Action callback)
+        {
+            if (_loader != null)
+            {
+                _coroutineService.StartCoroutine(HideLoader(callback));
+            }
+            else
+            {
+                _coroutineService.StopCoroutine(_showLoaderCoroutine);
+                callback?.Invoke();
+            }
+        }
+
+        private static IEnumerator HideLoader(Action callback)
+        {
+            yield return _waitForHideLoader;
+            _loader.RemoveFromHierarchy();
+            callback?.Invoke();
         }
     } 
 }
