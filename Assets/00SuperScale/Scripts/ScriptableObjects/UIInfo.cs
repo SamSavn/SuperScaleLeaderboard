@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 namespace SuperScale.Data
 {
     [CreateAssetMenu(fileName = "LoaderInfo", menuName = "SuperScale/Data/Loader Info")]
-    public class UIInfo : ScriptableObject
+    public class UIInfo : AbstractInfo
     {
         [Header("Loader")]
         [SerializeField] private VisualTreeAsset _loaderAsset;

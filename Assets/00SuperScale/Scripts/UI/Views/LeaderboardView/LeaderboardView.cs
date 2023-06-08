@@ -26,8 +26,8 @@ namespace SuperScale.UI.Views
         {
             Presenter = new LeaderboardViewPresenter(this, model);
 
-            UIInfo info = ServiceRegistry.Get<InfoService>().UIInfo;
-            _wait = new WaitForSeconds(info.EntriesInsertDelay);
+            UIInfo info = ServiceRegistry.Get<InfoService>().Get<UIInfo>();
+            _wait = new WaitForSeconds(info != null ? info.EntriesInsertDelay : .15f);
         }
 
         public override ITransition GetEnterTransition()

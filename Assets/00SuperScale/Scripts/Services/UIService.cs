@@ -36,7 +36,12 @@ namespace SuperScale.Services
         private bool IsPreparing(IView view) => _preparingViews.Any(x => x.ID == view.ID);
         private bool IsTransitioning(IView view) => _transitioningViews.Any(x => x.ID == view.ID);
 
-        public void PrepareView(IView view, Action callback = null)
+        /// <summary>
+        /// Executes a callback as soon as a view is ready
+        /// </summary>
+        /// <param name="view">The view to check</param>
+        /// <param name="callback">Callback</param>
+        public void RegisterViewReadyListener(IView view, Action callback = null)
         {
             if (view == null)
             {
@@ -51,12 +56,22 @@ namespace SuperScale.Services
             view.RegisterReadyListener(() => OnViewReady(view, callback));
         }
 
+        /// <summary>
+        /// Executes the enter transition on a view
+        /// </summary>
+        /// <param name="view">The view to transition</param>
+        /// <param name="callback">On transition completed</param>
         public void TransitionEnter(IView view, Action callback = null)
         {
             SetTransition(_viewEnterNotifier, view, callback);
             view.Enter(() => _viewEnterNotifier.Notify());
         }
 
+        /// <summary>
+        /// Executes the exit transition on a view
+        /// </summary>
+        /// <param name="view">The view to transition</param>
+        /// <param name="callback">On transition completed</param>
         public void TransitionExit(IView view, Action callback = null)
         {
             SetTransition(_viewExitNotifier, view, callback);

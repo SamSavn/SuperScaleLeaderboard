@@ -111,7 +111,7 @@ namespace SuperScale.UI
                     TryShowLoader(); 
                 }
 
-                _uiService.PrepareView(_currentView, OnCurrentViewReady);
+                _uiService.RegisterViewReadyListener(_currentView, OnCurrentViewReady);
             }
             else
             {
@@ -163,7 +163,7 @@ namespace SuperScale.UI
             }
             else
             {
-                _coroutineService.StopCoroutine(_showLoaderCoroutine);
+                _coroutineService.StopCoroutine(ref _showLoaderCoroutine);
                 callback?.Invoke();
             }
         }

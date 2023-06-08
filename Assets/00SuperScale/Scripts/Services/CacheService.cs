@@ -17,38 +17,63 @@ namespace SuperScale.Services
             _caches = new Dictionary<Type, object>();
         }
 
-        public bool TryGet<T>(string key, out T obj)
+        private bool TryGetCache<T>(out Cache<T> cache)
         {
             Type type = typeof(T);
+            cache = null;
 
-            if (_caches.TryGetValue(type, out object cache))
+            if (_caches.TryGetValue(type, out object result))
             {
-                if (cache is Cache<T> typedCache)
+                if (result is Cache<T> typedCache)
                 {
-                    return typedCache.TryGetValue(key, out obj);
+                    cache = typedCache;
                 }
+            }
+
+            return cache != null;
+        }
+
+        public bool TryGet<T>(string key, out T obj)
+        {
+            if(TryGetCache(out Cache<T> cache))
+            {
+                return cache.TryGetValue(key, out obj);
             }
 
             obj = default;
             return false;
         }
 
+        /// <summary>
+        /// Saves an asset in the corresponding cache
+        /// </summary>
+        /// <typeparam name="T">Type of the asset</typeparam>
+        /// <param name="key">Address of the asset</param>
+        /// <param name="obj">Asset</param>
         public void Save<T>(string key, T obj)
         {
-            Type type = typeof(T);
-
-            if (_caches.TryGetValue(type, out object cache))
+            if(TryGetCache(out Cache<T> cache))
             {
-                if (cache is Cache<T> typedCache)
-                {
-                    typedCache.Save(key, obj);
-                    return;
-                }
+                cache.Save(key, obj);
+                return;
             }
 
+            Type type = typeof(T);
             Cache<T> newCache = new Cache<T>();
             newCache.Save(key, obj);
             _caches[type] = newCache;
+        }
+
+        /// <summary>
+        /// Disposes a cache of a type if any
+        /// </summary>
+        /// <typeparam name="T">Type of cache</typeparam>
+        public void DisposeCache<T>()
+        {
+            if(TryGetCache(out Cache<T> cache))
+            {
+                cache.Dispose();
+            }
         }
 
         public override void Dispose()

@@ -3,7 +3,7 @@
 namespace SuperScale.Data
 {
     [CreateAssetMenu(fileName = "LeaderboardInfo", menuName = "SuperScale/Data/Leaderboard Info")]
-    public class LeaderboardInfo : ScriptableObject
+    public class LeaderboardInfo : AbstractInfo
     {
         [SerializeField] private int _leaderboardBadgesNumber;
         [SerializeField] private int[] _leaderboardPossibleEntries;

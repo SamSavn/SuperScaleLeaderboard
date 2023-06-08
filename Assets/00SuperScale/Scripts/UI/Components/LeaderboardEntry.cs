@@ -23,6 +23,8 @@ namespace SuperScale.UI.Components
         private int _badgesNumber;
         private bool _isPlayer;
 
+        private float _transitionDuration;
+
         private VisualElement _mainContainer;
         private VisualElement _background;
         private Image _badge;
@@ -50,23 +52,44 @@ namespace SuperScale.UI.Components
         {
             _entryData = data;
             Uid = _entryData.player.uid;
-            _isPlayer = Uid.Equals(PlayerPrefs.GetString(_infoService.PlayerPrefsInfo.PlayerUidPPKey));
+
+            if (_infoService.TryGet(out PlayerPrefsInfo ppInfo))
+            {
+                _isPlayer = Uid.Equals(PlayerPrefs.GetString(ppInfo.PlayerUidPPKey));
+            }
+            else
+            {
+                _isPlayer = false;
+            }
 
             RegisterAssetLoadedListener();
         }
 
         public override ITransition GetEnterTransition()
         {
-            return new OpacityTransition(_mainContainer, 0, 1f, _infoService.UIInfo.EntriesFadeDuration);
+            return new OpacityTransition(_mainContainer, 0, 1f, _transitionDuration);
         }
 
         private void GetInfo()
         {
             _infoService = ServiceRegistry.Get<InfoService>();
-            _badgePrefix = _infoService.AddressesInfo.BadgeAdrsPrefix;
-            _characterPrefix = _infoService.AddressesInfo.CharacterAdrsPrefix;
-            _flagPrefix = _infoService.AddressesInfo.FlagAdrsPrefix;
-            _badgesNumber = _infoService.LeaderboardInfo.LeaderboardBadgesNumber;
+
+            if(_infoService.TryGet(out AddressesInfo addressesInfo))
+            {
+                _badgePrefix = addressesInfo.BadgeAdrsPrefix;
+                _characterPrefix = addressesInfo.CharacterAdrsPrefix;
+                _flagPrefix = addressesInfo.FlagAdrsPrefix;
+            }
+
+            if (_infoService.TryGet(out LeaderboardInfo leaderboardInfo))
+            {
+                _badgesNumber = leaderboardInfo.LeaderboardBadgesNumber;
+            }
+
+            if(_infoService.TryGet(out UIInfo uIInfo))
+            {
+                _transitionDuration = uIInfo.EntriesFadeDuration;
+            }
         }
 
         public override void GetElements()
