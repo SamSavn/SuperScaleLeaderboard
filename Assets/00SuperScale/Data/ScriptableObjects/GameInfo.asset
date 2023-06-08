@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c410fec59f4fdd4caf0f1073dc36c26, type: 3}
   m_Name: GameInfo
   m_EditorClassIdentifier: 
-  _uiInfo: {fileID: 11400000, guid: 26a401df7ee394d4b8adc875dfb67912, type: 2}
-  _playerPrefsInfo: {fileID: 11400000, guid: 8ed113a55e04b734aac1ac3f581b1420, type: 2}
-  _leaderboardInfo: {fileID: 11400000, guid: b1ddc1043e0a01841a33fc990ed3ee6a, type: 2}
-  _addressesInfo: {fileID: 11400000, guid: aec6fff701e18e740972a11677e1120d, type: 2}
-  _transitionsInfo: {fileID: 11400000, guid: 772c769f15eee6a458b9877b8dbd81ce, type: 2}
+  _info:
+  - {fileID: 11400000, guid: aec6fff701e18e740972a11677e1120d, type: 2}
+  - {fileID: 11400000, guid: b1ddc1043e0a01841a33fc990ed3ee6a, type: 2}
+  - {fileID: 11400000, guid: 8ed113a55e04b734aac1ac3f581b1420, type: 2}
+  - {fileID: 11400000, guid: 26a401df7ee394d4b8adc875dfb67912, type: 2}

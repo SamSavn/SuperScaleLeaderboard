@@ -48,6 +48,12 @@ namespace SuperScale.Services
             Addressables.Release(handle);
         }
 
+        /// <summary>
+        /// Retrieves an asset from the addressables or from the cache
+        /// </summary>
+        /// <typeparam name="T">Type of asset</typeparam>
+        /// <param name="address">Address of the asset</param>
+        /// <param name="onComplete">Callback</param>
         public void GetOrLoadAsset<T>(string address, Action<T> onComplete)
         {
             if(ServiceRegistry.Get<CacheService>().TryGet(address, out T asset))
@@ -60,7 +66,7 @@ namespace SuperScale.Services
             }
         }
 
-        public async void LoadAndSaveAsset<T>(string address, Action<T> onComplete)
+        private async void LoadAndSaveAsset<T>(string address, Action<T> onComplete)
         {
             await LoadAsset<T>(address, SaveAsset);
 

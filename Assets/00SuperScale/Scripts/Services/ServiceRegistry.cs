@@ -11,6 +11,11 @@ namespace SuperScale.Services
     {
         private static Dictionary<Type, object> _services = new Dictionary<Type, object>();
 
+        /// <summary>
+        /// Gets a Service
+        /// </summary>
+        /// <typeparam name="T">The type of the service</typeparam>
+        /// <returns>Service</returns>
         public static T Get<T>() where T : Service
         {
             Type type = typeof(T);
@@ -24,12 +29,21 @@ namespace SuperScale.Services
             }
         }
 
+        /// <summary>
+        /// Registers a Service in the registry
+        /// </summary>
+        /// <typeparam name="T">The type of the service</typeparam>
+        /// <param name="service">The service to register</param>
         public static void Register<T>(T service) where T : Service
         {
             Type type = typeof(T);
             _services.AddOrReplace(type, service);
         }
 
+        /// <summary>
+        /// Unregisters a Service from the registry
+        /// </summary>
+        /// <typeparam name="T">The type of the service to unregister</typeparam>
         public static void Unregister<T>() where T : Service
         {
             Type type = typeof(T);

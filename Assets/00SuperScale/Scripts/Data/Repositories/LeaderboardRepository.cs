@@ -12,10 +12,12 @@ namespace SuperScale.Data
 
         public void Initialize(int entriesToRequest, Action onDataLoaded)
         {
-            _adrsInfo = ServiceRegistry.Get<InfoService>().AddressesInfo;
             _entriesToRequest = entriesToRequest;
 
-            base.Initialize($"{_adrsInfo.DataAdrsPrefix}{_entriesToRequest}", onDataLoaded);
+            if (ServiceRegistry.Get<InfoService>().TryGet(out _adrsInfo))
+            {
+                base.Initialize($"{_adrsInfo.DataAdrsPrefix}{_entriesToRequest}", onDataLoaded);
+            }
         }
 
         protected override void OnDataLoaded(TextAsset data)

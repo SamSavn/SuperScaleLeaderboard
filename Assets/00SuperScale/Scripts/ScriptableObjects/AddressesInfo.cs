@@ -3,7 +3,7 @@
 namespace SuperScale.Data
 {
     [CreateAssetMenu(fileName = "AddressesInfo", menuName = "SuperScale/Data/Addresses Info")]
-    public class AddressesInfo : ScriptableObject
+    public class AddressesInfo : AbstractInfo
     {
         [SerializeField] private string _badgeAdrsPrefix;
         [SerializeField] private string _characterAdrsPrefix;

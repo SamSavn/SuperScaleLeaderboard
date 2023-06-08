@@ -20,11 +20,20 @@ namespace SuperScale.Services
             _runner = runner;
         }
 
+        /// <summary>
+        /// Starts a IEnumerator
+        /// </summary>
+        /// <param name="routine">The IEnumerator to start</param>
+        /// <returns>Coroutine</returns>
         public Coroutine StartCoroutine(IEnumerator routine)
         {
             return _runner.StartCoroutine(routine);
         }
 
+        /// <summary>
+        /// Stops a IEnumerator
+        /// </summary>
+        /// <param name="routine">The IEnumerator to stop</param>
         public void StopCoroutine(IEnumerator routine)
         {
             if(routine != null)
@@ -33,7 +42,11 @@ namespace SuperScale.Services
             }
         }
 
-        public void StopCoroutine(Coroutine routine)
+        /// <summary>
+        /// Stops a Coroutine and sets it to null
+        /// </summary>
+        /// <param name="routine">The Coroutine to stop</param>
+        public void StopCoroutine(ref Coroutine routine)
         {
             if (routine != null)
             {
@@ -42,9 +55,12 @@ namespace SuperScale.Services
             }
         }
 
+        /// <summary>
+        /// Stops all the coroutines
+        /// </summary>
         public void StopAllCoroutines()
         {
-            StopAllCoroutines();
+            _runner.StopAllCoroutines();
         }
 
         public override void Dispose()

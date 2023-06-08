@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0980c9a2e339a9b4eaeab6d73f176616, type: 3}
   m_Name: CoroutineServiceSettings
   m_EditorClassIdentifier: 
-  _runner: {fileID: 0}
+  _runnerPrefab: {fileID: 4199746318456772051, guid: 7c9f8baa9726fad47b7d1a1ac899f96e, type: 3}
