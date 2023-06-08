@@ -34,7 +34,7 @@ namespace SuperScale.UI.Components
         private Label _userScore;
         private Image _vipImage;
 
-        public LeaderboardEntry()
+        public LeaderboardEntry() : base()
         {
             AddToClassList(ID);
 
@@ -57,8 +57,7 @@ namespace SuperScale.UI.Components
 
         public override ITransition GetEnterTransition()
         {
-            UIInfo info = ServiceRegistry.Get<InfoService>().UIInfo;
-            return new OpacityTransition(_mainContainer, 0, 1f, info.EntriesFadeDuration);
+            return new OpacityTransition(_mainContainer, 0, 1f, _infoService.UIInfo.EntriesFadeDuration);
         }
 
         private void GetInfo()

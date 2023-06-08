@@ -6,8 +6,10 @@ namespace SuperScale.Services
     /// Service can be used to access data or methods all over the codebase.
     /// Once a Service is created, it needs to be added to the ServiceRegistry
     /// </summary>
+    [Serializable]
     public abstract class Service : IDisposable
     {
+        public Service() { }
         public abstract void Dispose();
     } 
 }

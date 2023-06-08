@@ -3,35 +3,31 @@ using UnityEngine.UIElements;
 using SuperScale.UI;
 using SuperScale.UI.Views;
 using SuperScale.Services;
+using SuperScale.Services.Settings;
 using SuperScale.Data;
 
-public class Initializer : MonoBehaviour
+namespace SuperScale.Managers
 {
-    [SerializeField] private GameInfo _gameInfo;
-    [SerializeField] private UIDocument _rootUiDocument;
-
-    private void Awake()
+    public class Initializer : MonoBehaviour
     {
-        InitializeServices();
-        Navigator.Initialize(_rootUiDocument);
-    }
+        [SerializeField] private GameInfo _gameInfo;
+        [SerializeField] private ServicesSettings _servicesSttings;
+        [SerializeField] private UIDocument _rootUiDocument;
 
-    private void Start()
-    {
-        Navigator.Navigate(new LoadingView());
-    }
+        private void Awake()
+        {
+            _servicesSttings.Initialize();
+            Navigator.Initialize(_rootUiDocument);
+        }
 
-    private void InitializeServices()
-    {
-        ServiceRegistry.Register(new InfoService(_gameInfo));
-        ServiceRegistry.Register(new CoroutineService(this));
-        ServiceRegistry.Register(new AssetsService());
-        ServiceRegistry.Register(new CacheService());
-        ServiceRegistry.Register(new UIService(_gameInfo.UIInfo));
-    }
+        private void Start()
+        {
+            Navigator.Navigate(new LoadingView());
+        }
 
-    private void OnApplicationQuit()
-    {
-        ServiceRegistry.Dispose();
-    }
+        private void OnApplicationQuit()
+        {
+            ServiceRegistry.Dispose();
+        }
+    }    
 }

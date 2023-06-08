@@ -15,5 +15,11 @@ namespace SuperScale.Data
             Data = data;
             base.OnDataLoaded(data);
         }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            Data = null;
+        }
     } 
 }

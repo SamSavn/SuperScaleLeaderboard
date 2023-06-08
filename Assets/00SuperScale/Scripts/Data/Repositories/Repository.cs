@@ -19,7 +19,7 @@ namespace SuperScale.Data
     /// </summary>
     /// <typeparam name="TData">Type of data the repository will hold</typeparam>
     /// <typeparam name="TAsset">Type of asset to load</typeparam>
-    public abstract class Repository<TData, TAsset>
+    public abstract class Repository<TData, TAsset> : IDisposable
     {
         private ActionNotifier _notifier = new ActionNotifier();
         public TData Data { get; protected set; }
@@ -47,6 +47,12 @@ namespace SuperScale.Data
         protected virtual void OnDataLoaded(TAsset data)
         {
             _notifier.Notify();
+        }
+
+        public virtual void Dispose()
+        {
+            Data = default(TData);
+            _notifier.Clear();
         }
     }
 }
