@@ -33,7 +33,10 @@ namespace SuperScale.UI.Views
         public bool IsReady() => Ready;
 
         protected virtual void OnEnter() { }
-        protected virtual void OnExit() { }
+        protected virtual void OnExit() 
+        {
+            Dispose();
+        }
 
         public virtual void Enter(Action callback = null)
         {
@@ -48,7 +51,7 @@ namespace SuperScale.UI.Views
             void OnComplete()
             {
                 callback?.Invoke();
-                OnEnter();
+                OnEnter();                
             }
         }
 
@@ -86,8 +89,9 @@ namespace SuperScale.UI.Views
             _readyNotifier.Notify();
         }
 
-        public virtual void Dispose()
+        public override void Dispose()
         {
+            base.Dispose();
             _readyNotifier.Clear();
         }
     }

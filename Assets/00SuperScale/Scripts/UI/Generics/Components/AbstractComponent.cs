@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace SuperScale.UI.Components
 {
-    public abstract class AbstractComponent : VisualElement
+    public abstract class AbstractComponent : VisualElement, IDisposable
     {
         #region UXML Traits
 
@@ -97,6 +97,11 @@ namespace SuperScale.UI.Components
         protected void RegisterAssetLoadedListener()
         {
             RegisterAssetLoadedListener(OnAssetLoaded);
+        }
+
+        public virtual void Dispose()
+        {
+            _repo.Dispose();
         }
     } 
 }
